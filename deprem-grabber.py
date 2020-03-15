@@ -22,7 +22,7 @@ def get_lastErtq():
     except Exception as e:
         with open("errors.txt","a") as fp:
             fp.write("Error time : " + time.asctime() + "\n")
-            fp.write("Error : " + e + "\n")
+            fp.write("Error : " + str(e) + "\n")
             fp.write("Error File : deprem-grabber.py \n")
             fp.write("--------------------- \n")
             fp.close()

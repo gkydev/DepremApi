@@ -1,5 +1,4 @@
-import jinja2,time 
-
+import time
 def split_data(Ertq):
     try:
         splitted = Ertq.split("   ")
@@ -32,9 +31,3 @@ def split_data(Ertq):
             fp.write("Error File : resources.py \n")
             fp.write("--------------------- \n")
             fp.close()
-def get_message(data):
-    templateLoader = jinja2.FileSystemLoader(searchpath="./")
-    templateEnv = jinja2.Environment(loader=templateLoader)
-    template = templateEnv.get_template("template.html")
-    message = template.render(tarih=data["tarih"],saat=data["saat"],enlem=data["enlem"],boylam=data["boylam"],derinlik=data["derinlik"],buyukluk=data["buyukluk"],yer=data["yer"])
-    return message
